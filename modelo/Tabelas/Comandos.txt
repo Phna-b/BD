@@ -30,3 +30,13 @@
 
 insert into Ator values ('Leonardo DiCaprio', '1974-11-11')
 
+insert into Obra values(
+'O Lobo de Wall Street',
+1,
+'2013-01-01',
+'Jordan Belfort é um ambicioso corretor da bolsa de valores que cria um verdadeiro império, enriquecendo de forma rápida, porém ilegal. Ele e seus amigos mergulham em um mundo de excessos, mas seus métodos ilícitos despertam a atenção da polícia.',
+'Comédia/Drama',
+'03:00:00',
+'00',
+'Leonardo DiCaprio')
+
