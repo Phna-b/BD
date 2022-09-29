@@ -1,0 +1,32 @@
+ create table Ator(
+	Nome varchar(100),
+	DataNasc date
+	primary key(Nome)
+ )
+ create table Obra(
+	Titulo varchar(100) NOT NULL,
+	IDObra integer,
+	Ano date,
+	Resumo varchar(1000),
+	Genero varchar(100),
+	Duracao time, 
+	Ntemporadas integer,
+	Estrela varchar(100),
+	primary key(IDObra),
+	FOREIGN KEY (Estrela) REFERENCES Ator(Nome)
+ )
+
+ create table Status(
+	DataF date,
+	DataInic date check (DataInic <= Dataf),
+	Tempo time,
+	Nota integer check (Nota >= 0 and Nota <=5), 
+	Status varchar(15) check (Status = 'Completo' or Status = 'Em andamento' or Status = 'Na lista'),
+	IDObra integer,
+	primary key(Status),
+	FOREIGN KEY (IDObra) REFERENCES Obra(IDObra)
+ )
+
+
+insert into Ator values ('Leonardo DiCaprio', '1974-11-11')
+
