@@ -1,0 +1,36 @@
+create table Usuario (
+id int,
+nome varchar(20),
+sobrenome varchar(50),
+email varchar(70),
+cpf varchar(15) not null, 
+senha varchar(50) not null,
+primary key(id)
+);
+insert into Usuario values ('1','Pedro','Henrique','pedro@gmail.com','12345678921','pedro')
+select * from usuario
+
+
+create table Adm(
+login varchar (20),
+senha varchar(20),
+id int,
+primary key(login),
+FOREIGN KEY (id) REFERENCES usuario(id));
+
+insert into Adm values('pedroadm','maxadmin','1')
+select * from adm
+
+create table Consumo(
+cigarros_consumo_dia int,
+cigarros_meta int,
+cigarros_gasto_mes float,
+cigarro_gasto_mes_meta float,
+tipo varchar(20) check (tipo = 'Com filtro' or tipo = 'Paiol' or tipo = 'Eletrônico'),
+preco float,
+id int,
+primary key(tipo),	
+FOREIGN KEY (id) REFERENCES usuario(id));
+insert into consumo values('2','0','34','0','Com filtro','17','1')
+insert into consumo values('4','0','345','0','Paiol','17','1')
+select * from consumo;
